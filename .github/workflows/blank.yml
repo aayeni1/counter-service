@@ -161,7 +161,7 @@ jobs:
 
         # SSH, SCP commands
         SSH_COMMAND="ssh -i ec2.pem -o StrictHostKeyChecking=no $EC2_USER@$EC2_HOST"
-        SCP_COMMAND="scp -ri ec2.pem -o StrictHostKeyChecking=no"
+        SCP_COMMAND="scp -i ec2.pem -o StrictHostKeyChecking=no"
 
         #Login to Docker registry
         $SSH_COMMAND "aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 088662845283.dkr.ecr.us-east-1.amazonaws.com"
